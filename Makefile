@@ -1,13 +1,12 @@
 SBT = sbt
 
-# Generate Verilog code
-doit:
-	$(SBT) "runMain empty.AddMain"
+all: arbiter
 
-# Run the test
-test:
-	$(SBT) "test:runMain empty.AddTester"
+test: arbiter_test
 
-clean:
-	git clean -fd
+# Arbiter from comb logic
+arbiter:
+	$(SBT) "runMain bootcamp.ArbiterMain"
 
+arbiter_test:
+	$(SBT) "test:runMain bootcamp.ArbiterTester"
