@@ -24,3 +24,10 @@ shiftregopt:
 
 shiftregopt_test:
 	$(SBT) "test:runMain bootcamp.ShiftRegOptTester"
+
+# FIR filter from example in 2.5
+fir:
+	$(SBT) "runMain bootcamp.FIRMain"
+
+fir_test:
+	$(SBT) "test:runMain bootcamp.FIRTester"
